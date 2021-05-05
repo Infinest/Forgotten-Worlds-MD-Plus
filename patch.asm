@@ -112,7 +112,7 @@ END_CUTSCENE_DETOUR							; This detour ensures that the bonus scenes after a le
 	move.w  #$0000,(MD_PLUS_OVERLAY_PORT)	; Close interface
 	cmpi.b	#$1,D0
 	bne		DO_NOT_RESTART_TIMER
-	jmp		$1900C							; If the track is no still playing we start the timer for automatically ending the cutscene over
+	jmp		$1900C							; If the track is still playing we start the timer for automatically ending the cutscene over
 DO_NOT_RESTART_TIMER
 	move.b	#$0,(RAM_LAST_PLAYED_TRACK)		; The level complete track has finished playing, set last played track to zero
 NOT_LEVEL_END_CUTSCENE
