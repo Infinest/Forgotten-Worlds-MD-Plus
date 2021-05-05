@@ -54,7 +54,7 @@ CHEAT set 0
 	org $1A070
 
 RESET_DETOUR
-	move	#$1300,D1
+	move	#$1300,D1						; Ensures that cd audio stops on reset
 	jsr		WRITE_MD_PLUS_FUNCTION
 	jmp		ORIGINAL_RESET_VECTOR
 
